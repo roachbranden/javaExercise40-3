@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class javaExercise40Final 
+{
+	public static void main(String[] args)
+	{
+		Scanner reader = new Scanner(System.in);
+		System.out.print("Please enter the height you would like the Christmas tree to be: ");
+		int var1 = Integer.parseInt(reader.nextLine());
+		xmasTree(var1);
+		reader.close();
+	}
+	
+	public static void xmasTree(int height)
+	{
+		int starNum = 1;
+		//int height = 10;
+		int whiteSpace = height - 1;
+		int whiteCount = 1;
+		int starCount = 1;
+		//int baseWhite = height - 1;
+		for (int counter = 1; counter <= height; counter++)
+		{
+			while(whiteCount <= whiteSpace)
+			{
+				System.out.print(" ");
+				whiteCount++;
+			}
+			whiteCount = 1;
+			whiteSpace -= 1;
+			
+			while (starCount <= starNum)
+			{
+				System.out.print("*");
+				starCount++;
+			}
+			starCount = 1;
+			starNum += 2;
+			System.out.println("");
+		}
+		for(int counter = 1; counter <= 2; counter++)
+		{
+			for (whiteCount = 1; whiteCount < height - 1; whiteCount++)
+			{
+				System.out.print(" ");
+			}
+			for (starCount = 1; starCount <= 3; starCount++)
+			{
+				System.out.print("*");
+			}
+			System.out.println("");
+		}
+	}
+
+}
